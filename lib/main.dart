@@ -1,32 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'features/counter/controllers/counter_controller.dart';
+import 'home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final counterC = Get.put(CounterController());
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-          child: Text(
-        'Angka 0',
-        style: TextStyle(fontSize: 35),
-      )),
+    return Obx(
+      () => MaterialApp(
+        theme: counterC.isDark.value ? ThemeData.dark() : ThemeData.light(),
+        home: const HomePage(),
+      ),
     );
   }
 }
