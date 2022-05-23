@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'features/counter/controllers/counter_controller.dart';
 import 'home_page.dart';
+import 'router/app_routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => MaterialApp(
+      () => GetMaterialApp(
         theme: counterC.isDark.value ? ThemeData.dark() : ThemeData.light(),
         home: const HomePage(),
+        getPages: AppRoutes.pages,
       ),
     );
   }

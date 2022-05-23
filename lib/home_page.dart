@@ -3,6 +3,7 @@ import 'package:aorl_apps_getx/features/textfield/controllers/text_controller.da
 import 'package:aorl_apps_getx/features/counter/screens/counter_screen.dart';
 import 'package:aorl_apps_getx/features/textfield/screens/textfield_screen.dart';
 import 'package:aorl_apps_getx/features/workers/screens/workers_screen.dart';
+import 'package:aorl_apps_getx/router/route_name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,6 +39,12 @@ class HomePage extends StatelessWidget {
                     MaterialPageRoute(builder: (_) => const WorkerScreen()));
               },
               child: const Text('Go To Workers GetX'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(RouteName.passData);
+              },
+              child: const Text('Go To PassData'),
             ),
             // Text(Get.find<TextController>().textC.text),
             // Text(Get.find<CounterController>().counter.value.toString())
