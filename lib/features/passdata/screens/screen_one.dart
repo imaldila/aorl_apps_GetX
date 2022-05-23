@@ -10,9 +10,9 @@ class ScreenOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ArgumentModel argumentModel = Get.arguments[0];
+    // ArgumentModel argumentModel = Get.arguments[0];
 
-    Name name = Get.arguments[1];
+    Name name = Get.arguments[0];
 
     return Scaffold(
       appBar: AppBar(
@@ -25,13 +25,13 @@ class ScreenOne extends StatelessWidget {
           children: [
             const Text('Screen One'),
             const SizedBox(height: 16),
-            Text('This is Argument Model : ${argumentModel.listArg}'),
-            // Text('This is Argument Name : ${name.name}'),
+            // Text('This is Argument Model : ${argumentModel.listArg}'),
+            Text('This is Argument Name : ${name.name}'),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
                 Get.toNamed(RouteName.screentwo,
-                    arguments: [argumentModel, name]);
+                    arguments: [name, ArgumentModel()]);
               },
               child: const Text('Go to Screen Two'),
             ),

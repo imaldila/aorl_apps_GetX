@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../router/route_name.dart';
+import '../models/argument_model.dart';
+import '../models/name_model.dart';
 
 class ScreenThree extends StatelessWidget {
   const ScreenThree({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // ArgumentModel argumentModel = Get.arguments[1];
+
+    Name name = Get.arguments[0];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Screen Three'),
@@ -19,11 +24,11 @@ class ScreenThree extends StatelessWidget {
           children: [
             const Text('Screen Three'),
             const SizedBox(height: 16),
-            Text('This is Argument : ${Get.arguments}'),
+            Text('This is Argument : ${name.name}'),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                Get.toNamed(
+                Get.offAll(
                   RouteName.passData,
                 );
               },
