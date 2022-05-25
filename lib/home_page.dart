@@ -46,6 +46,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go To PassData'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(RouteName.dioscreen);
+              },
+              child: const Text('Go To Dio'),
+            ),
             // Text(Get.find<TextController>().textC.text),
             // Text(Get.find<CounterController>().counter.value.toString())
           ],

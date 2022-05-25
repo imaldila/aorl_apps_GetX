@@ -10,9 +10,9 @@ class ScreenTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Name name = Get.arguments[0];
     ArgumentModel argumentModel = Get.arguments[1];
 
-    Name name = Get.arguments[0];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Screen Three'),

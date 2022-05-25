@@ -21,9 +21,9 @@ class PassDataScreen extends StatelessWidget {
           onPressed: () {
             Get.toNamed(
               RouteName.screenone,
-              arguments: 
-                [Name(name: 'Aldi')],
-              
+              arguments: [
+                Name(name: 'Aldi'),
+              ],
             );
           },
           child: const Text('Go to Screen One'),

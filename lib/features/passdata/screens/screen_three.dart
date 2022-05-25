@@ -10,7 +10,7 @@ class ScreenThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ArgumentModel argumentModel = Get.arguments[1];
+    ArgumentModel argumentModel = Get.arguments[1];
 
     Name name = Get.arguments[0];
     return Scaffold(
@@ -24,11 +24,11 @@ class ScreenThree extends StatelessWidget {
           children: [
             const Text('Screen Three'),
             const SizedBox(height: 16),
-            Text('This is Argument : ${name.name}'),
+            Text('This is Argument : ${argumentModel.listArg}'),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () {
-                Get.offAll(
+                Get.offAndToNamed(
                   RouteName.passData,
                 );
               },

@@ -1,4 +1,5 @@
 import 'package:aorl_apps_getx/features/counter/screens/counter_screen.dart';
+import 'package:aorl_apps_getx/features/dio/screens/dio_screen.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_one.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_three.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_two.dart';
@@ -23,5 +24,6 @@ class AppRoutes {
     GetPage(name: RouteName.screenone, page: () => const ScreenOne()),
     GetPage(name: RouteName.screentwo, page: () => const ScreenTwo()),
     GetPage(name: RouteName.screenthree, page: () => const ScreenThree()),
+    GetPage(name: RouteName.dioscreen, page: () => DioScreen()),
   ];
 }
