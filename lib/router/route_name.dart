@@ -9,4 +9,6 @@ abstract class RouteName {
   static const screenthree = '/screenthere';
   static const dioscreen = '/dioscreen';
   static const radioScreen = '/radio_screen';
+  static const maleScreen = '/male_screen';
+  static const femaleScreen = '/female_screen';
 }
