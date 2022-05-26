@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -25,7 +27,7 @@ class WorkerController extends GetxController {
     //     time: Duration(seconds: 2));
 
     interval(countWorker, (_) => print('Running something.'),
-        time: Duration(seconds: 2));
+        time: const Duration(seconds: 2));
     super.onInit();
   }
 }

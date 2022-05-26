@@ -1,6 +1,6 @@
 import 'package:aorl_apps_getx/features/dio/models/user.dart';
 import 'package:aorl_apps_getx/features/dio/services/services.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class DioController extends GetxController {
@@ -13,16 +13,20 @@ class DioController extends GetxController {
       required String firstName,
       required String lastName}) async {
     try {
-      var request = User(
+      var request = UserArguments(
         email: email,
         firstName: firstName,
         lastName: lastName,
       );
-      await userRository.postUser(email, firstName, lastName);
+      await userRository.postUser(request);
       update();
-      print('Success');
+      if (kDebugMode) {
+        print('Success');
+      }
     } catch (e) {
-      print('error postUser: $e');
+      if (kDebugMode) {
+        print('error postUser: $e');
+      }
     }
   }
 }

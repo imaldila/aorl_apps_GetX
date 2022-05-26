@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../../../router/route_name.dart';
 import '../models/argument_model.dart';
-import '../models/name_model.dart';
 
 class ScreenThree extends StatelessWidget {
   const ScreenThree({Key? key}) : super(key: key);
@@ -12,7 +11,7 @@ class ScreenThree extends StatelessWidget {
   Widget build(BuildContext context) {
     ArgumentModel argumentModel = Get.arguments[1];
 
-    Name name = Get.arguments[0];
+    // Name name = Get.arguments[0];
     return Scaffold(
       appBar: AppBar(
         title: const Text('Screen Three'),

@@ -3,7 +3,7 @@ import 'package:aorl_apps_getx/router/route_name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../models/argument_model.dart';
+
 
 class PassDataScreen extends StatelessWidget {
   const PassDataScreen({Key? key}) : super(key: key);

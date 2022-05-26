@@ -1,5 +1,3 @@
-import 'package:aorl_apps_getx/features/counter/controllers/counter_controller.dart';
-import 'package:aorl_apps_getx/features/textfield/controllers/text_controller.dart';
 import 'package:aorl_apps_getx/features/counter/screens/counter_screen.dart';
 import 'package:aorl_apps_getx/features/textfield/screens/textfield_screen.dart';
 import 'package:aorl_apps_getx/features/workers/screens/workers_screen.dart';
@@ -18,6 +16,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -51,6 +50,12 @@ class HomePage extends StatelessWidget {
                 Get.toNamed(RouteName.dioscreen);
               },
               child: const Text('Go To Dio'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(RouteName.radioScreen);
+              },
+              child: const Text('Go To Radio'),
             ),
             // Text(Get.find<TextController>().textC.text),
             // Text(Get.find<CounterController>().counter.value.toString())

@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   final counterC = Get.put(CounterController());
-  final dioC = Get.put(DioController());
 
   @override
   Widget build(BuildContext context) {

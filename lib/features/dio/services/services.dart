@@ -13,18 +13,18 @@ class UserArguments {
 }
 
 abstract class UserRository {
-  Future<User?> postUser(String email, String firstName, String lastName);
+  Future<User?> postUser(UserArguments arguments);
 }
 
 class UserService extends UserRository {
   @override
   Future<User?> postUser(
-      String firstName, String lastName, String email) async {
+      UserArguments arguments) async {
     try {
       var response = await Dio().post('https://reqres.in/api/users', data: {
-        'first_name': firstName,
-        'last_name': lastName,
-        'email': email,
+        'first_name': arguments.firstName,
+        'last_name': arguments.lastName,
+        'email': arguments.email,
       });
 
       if (response.statusCode == 201) {
