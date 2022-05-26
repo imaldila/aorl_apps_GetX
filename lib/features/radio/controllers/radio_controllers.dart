@@ -24,6 +24,9 @@ class RadioController extends GetxController {
     ),
   ];
 
+  final _bankList = BankList().obs;
+  BankList get bankList => _bankList.value;
+
   var selectedGenders = ''.obs;
   RxInt selectedBank = 0.obs;
 

@@ -13,7 +13,9 @@ class MainRadioScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('rebuild MainRadioScreen');
+    if (kDebugMode) {
+      print('rebuild MainRadioScreen');
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text('Radio GetX'),
@@ -23,10 +25,11 @@ class MainRadioScreen extends StatelessWidget {
           if (radioC.selectedGenders.value == 'Male') {
             Get.toNamed(RouteName.maleScreen);
           } else {
-            Get.toNamed(RouteName.femaleScreen);
+            Get.toNamed(RouteName.femaleScreen,
+                arguments: radioC.bankList);
           }
         },
-        child: Text('Go To Next Screen'),
+        child: const Text('Go To Next Screen'),
       ),
       body: Center(
         child: Column(
@@ -35,6 +38,7 @@ class MainRadioScreen extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               itemCount: radioC.gendersLenght(),
+              physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (ctx, index) => (radioC.genders[index].label ==
                           'Female' ||
                       radioC.genders[index].label == 'Male')
@@ -72,58 +76,90 @@ class MainRadioScreen extends StatelessWidget {
                                           const SizedBox(
                                             height: 16,
                                           ),
-                                          Card(
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              side: const BorderSide(
-                                                width: 1,
-                                                color: Colors.lightBlue,
-                                              ),
-                                            ),
-                                            child: Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              decoration: BoxDecoration(
-                                                color: Colors.white24,
+                                          ListView.builder(
+                                            shrinkWrap: true,
+                                            itemCount: radioC.banks.length,
+                                            physics:
+                                                const NeverScrollableScrollPhysics(),
+                                            itemBuilder: (context, index) =>
+                                                Card(
+                                              shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(8),
+                                                side: const BorderSide(
+                                                  width: 1,
+                                                  color: Colors.lightBlue,
+                                                ),
                                               ),
-                                              child: Row(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Container(
-                                                    padding:
-                                                        const EdgeInsets.all(8),
-                                                    height: 70,
-                                                    width: 80,
-                                                    child: const Icon(
-                                                      Icons.favorite,
-                                                      color: Colors.lightBlue,
+                                              child: Obx(
+                                                () => InkWell(
+                                                  onTap: () {
+                                                    if (radioC.selectedGenders
+                                                            .value ==
+                                                        'Female') {
+                                                      radioC.onSelectedBank(
+                                                          index);
+                                                      if (kDebugMode) {
+                                                        print(radioC
+                                                            .banks[index]
+                                                            .label);
+                                                      }
+                                                    }
+                                                  },
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    decoration: BoxDecoration(
+                                                      color: (radioC
+                                                                  .selectedBank
+                                                                  .value ==
+                                                              index)
+                                                          ? Colors.lightBlue
+                                                          : Colors.white24,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                    ),
+                                                    child: Row(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: [
+                                                        Container(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8),
+                                                          height: 70,
+                                                          width: 80,
+                                                          child: radioC
+                                                              .banks[index]
+                                                              .icon,
+                                                        ),
+                                                        const SizedBox(
+                                                          width: 8,
+                                                        ),
+                                                        Text(
+                                                          radioC.banks[index]
+                                                              .label!,
+                                                          style: ThemeData()
+                                                              .textTheme
+                                                              .bodyText2,
+                                                        ),
+                                                        const Spacer(),
+                                                        const Icon(Icons
+                                                            .keyboard_arrow_right),
+                                                        const SizedBox(
+                                                          width: 8,
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
-                                                  const SizedBox(
-                                                    width: 8,
-                                                  ),
-                                                  Text(
-                                                    'BCA',
-                                                    style: ThemeData()
-                                                        .textTheme
-                                                        .bodyText2,
-                                                  ),
-                                                  const Spacer(),
-                                                  const Icon(Icons
-                                                      .keyboard_arrow_right),
-                                                  const SizedBox(
-                                                    width: 8,
-                                                  ),
-                                                ],
+                                                ),
                                               ),
                                             ),
                                           ),
-                                          Text('Female'),
                                         ],
                                       )
                                     : (radioC.genders[index].label == 'Male')

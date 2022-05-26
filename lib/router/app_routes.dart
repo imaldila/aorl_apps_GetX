@@ -40,7 +40,7 @@ class AppRoutes {
     ),
     GetPage(
       name: RouteName.femaleScreen,
-      page: () => const FemaleScreen(),
+      page: () => FemaleScreen(),
     ),
   ];
 }
