@@ -16,7 +16,17 @@ class FemaleScreen extends StatelessWidget {
         title: const Text('Female'),
       ),
       body: Center(
-        child: Text(bankList.label ?? 'No Data'),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              height: 70,
+              width: 80,
+              child: bankList.icon,
+            ),
+            Text(bankList.label ?? 'No Data'),
+          ],
+        ),
       ),
     );
   }

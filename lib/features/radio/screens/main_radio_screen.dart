@@ -23,23 +23,19 @@ class MainRadioScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Radio GetX'),
       ),
-      floatingActionButton: ListView.builder(
-        shrinkWrap: true,
-        itemCount: 1,
-        itemBuilder: (context, index) => MaterialButton(
-          onPressed: () {
-            if (radioC.selectedGenders.value == 'Male') {
-              Get.toNamed(RouteName.maleScreen);
-            } else {
-              Get.toNamed(
-                RouteName.femaleScreen,
-                arguments: radioC.banks[radioC.selectedBank.value],
-              );
-              print(radioC.selectedBank.value);
-            }
-          },
-          child: const Text('Go To Next Screen'),
-        ),
+      floatingActionButton: MaterialButton(
+        onPressed: () {
+          if (radioC.selectedGenders.value == 'Male') {
+            Get.toNamed(RouteName.maleScreen);
+          } else {
+            Get.toNamed(
+              RouteName.femaleScreen,
+              arguments: radioC.banks[radioC.selectedBank.value],
+            );
+            print(radioC.selectedBank.value);
+          }
+        },
+        child: const Text('Go To Next Screen'),
       ),
       body: Center(
         child: Card(
