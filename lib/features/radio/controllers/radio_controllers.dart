@@ -22,7 +22,7 @@ class RadioController extends GetxController {
       label: 'BNI',
       icon: const Icon(Icons.monetization_on),
     ),
-  ];
+  ].obs;
 
   final _bankList = BankList().obs;
   BankList get bankList => _bankList.value;
