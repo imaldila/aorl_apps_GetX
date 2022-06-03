@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 class RadioController extends GetxController {
   ListGender genders = ListGender();
   BankList banks = BankList();
+  final RxString static = 'static'.obs;
+  RxBool isStatic = false.obs;
 
   @override
   void onInit() {

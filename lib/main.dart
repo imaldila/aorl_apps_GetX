@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'features/counter/controllers/counter_controller.dart';
-import 'features/dio/controllers/dio_controller.dart';
 import 'home_page.dart';
 import 'router/app_routes.dart';
 
