@@ -35,6 +35,9 @@ class MainRadioScreen extends StatelessWidget {
             );
             print(radioC.selectedBank.value);
           } else {
+            Get.toNamed(
+              RouteName.testingScreen,
+            );
             print(radioC.selectedBank.value);
           }
         },
@@ -64,8 +67,9 @@ class MainRadioScreen extends StatelessWidget {
                     ),
                   );
                 } else if ((radioC.genders.listGender[index].label == 'Male' &&
-                    radioC.genders.listGender[index].status == true) || (radioC.genders.listGender[index].label == 'Female' &&
-                    radioC.genders.listGender[index].status == false)) {
+                        radioC.genders.listGender[index].status == true) ||
+                    (radioC.genders.listGender[index].label == 'Female' &&
+                        radioC.genders.listGender[index].status == false)) {
                   return Obx(
                     () => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

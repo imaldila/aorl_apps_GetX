@@ -11,4 +11,5 @@ abstract class RouteName {
   static const radioScreen = '/radio_screen';
   static const maleScreen = '/male_screen';
   static const femaleScreen = '/female_screen';
+  static const testingScreen = '/testing_screen';
 }

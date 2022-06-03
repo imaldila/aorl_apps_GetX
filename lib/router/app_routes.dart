@@ -46,5 +46,9 @@ class AppRoutes {
       name: RouteName.femaleScreen,
       page: () => FemaleScreen(),
     ),
+    GetPage(
+      name: RouteName.testingScreen,
+      page: () => FemaleScreen(),
+    ),
   ];
 }
