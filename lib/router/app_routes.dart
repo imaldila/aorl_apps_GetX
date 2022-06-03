@@ -1,4 +1,5 @@
-import 'package:aorl_apps_getx/bindings/radio_binding.dart';
+import 'package:aorl_apps_getx/bindings/binding.dart';
+import 'package:aorl_apps_getx/bindings/textfield_binding.dart';
 import 'package:aorl_apps_getx/features/counter/screens/counter_screen.dart';
 import 'package:aorl_apps_getx/features/dio/screens/dio_screen.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_one.dart';
@@ -22,7 +23,10 @@ class AppRoutes {
       page: () => const HomePage(),
     ),
     GetPage(name: RouteName.counter, page: () => const CounterScreen()),
-    GetPage(name: RouteName.textfield, page: () => const TextFieldScreen()),
+    GetPage(
+        name: RouteName.textfield,
+        page: () => TextFieldScreen(),
+        binding: TextFieldBinding()),
     GetPage(name: RouteName.workers, page: () => const WorkerScreen()),
     GetPage(name: RouteName.passData, page: () => const PassDataScreen()),
     GetPage(name: RouteName.screenone, page: () => const ScreenOne()),

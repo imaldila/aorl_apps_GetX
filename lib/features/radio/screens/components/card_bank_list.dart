@@ -17,7 +17,7 @@ class CardBankList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: radioC.banks.length,
+      itemCount: radioC.banks.bankList.length,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => Card(
         shape: RoundedRectangleBorder(
@@ -33,7 +33,7 @@ class CardBankList extends StatelessWidget {
               if (radioC.selectedGenders.value == 'Female') {
                 radioC.onSelectedBank(index);
                 if (kDebugMode) {
-                  print(radioC.banks[index].label);
+                  print(radioC.banks.bankList[index].label);
                 }
               }
             },
@@ -52,13 +52,13 @@ class CardBankList extends StatelessWidget {
                     padding: const EdgeInsets.all(8),
                     height: 70,
                     width: 80,
-                    child: radioC.banks[index].icon,
+                    child: radioC.banks.bankList[index].icon,
                   ),
                   const SizedBox(
                     width: 8,
                   ),
                   Text(
-                    radioC.banks[index].label!,
+                    radioC.banks.bankList[index].label!,
                     style: ThemeData().textTheme.bodyText2,
                   ),
                   const Spacer(),

@@ -10,7 +10,7 @@ class FemaleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BankList bankList = Get.arguments;
+    Bank bank = Get.arguments;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Female'),
@@ -22,9 +22,9 @@ class FemaleScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               height: 70,
               width: 80,
-              child: bankList.icon,
+              child: bank.icon,
             ),
-            Text(bankList.label ?? 'No Data'),
+            Text(bank.label ?? 'No Data'),
           ],
         ),
       ),
