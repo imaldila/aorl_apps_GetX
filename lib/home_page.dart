@@ -57,6 +57,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go To Radio'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(RouteName.stackScreen);
+              },
+              child: const Text('Go To Stack'),
+            ),
             // Text(Get.find<TextController>().textC.text),
             // Text(Get.find<CounterController>().counter.value.toString())
           ],
