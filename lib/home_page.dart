@@ -53,6 +53,12 @@ class HomePage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
+                Get.toNamed(RouteName.diolistScreen);
+              },
+              child: const Text('Go To Dio List Data'),
+            ),
+            ElevatedButton(
+              onPressed: () {
                 Get.toNamed(RouteName.radioScreen);
               },
               child: const Text('Go To Radio'),

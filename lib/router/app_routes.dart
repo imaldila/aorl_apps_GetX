@@ -1,6 +1,7 @@
 import 'package:aorl_apps_getx/bindings/binding.dart';
 import 'package:aorl_apps_getx/bindings/textfield_binding.dart';
 import 'package:aorl_apps_getx/features/counter/screens/counter_screen.dart';
+import 'package:aorl_apps_getx/features/dio_list/screens/dio_list_screen.dart';
 import 'package:aorl_apps_getx/features/dio_single/screens/dio_screen.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_one.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_three.dart';
@@ -35,6 +36,7 @@ class AppRoutes {
     GetPage(name: RouteName.screentwo, page: () => const ScreenTwo()),
     GetPage(name: RouteName.screenthree, page: () => const ScreenThree()),
     GetPage(name: RouteName.dioscreen, page: () => DioScreen()),
+    GetPage(name: RouteName.diolistScreen, page: () => const DioListScreen()),
     GetPage(
       name: RouteName.radioScreen,
       page: () => MainRadioScreen(),
@@ -50,11 +52,11 @@ class AppRoutes {
     ),
     GetPage(
       name: RouteName.testingScreen,
-      page: () => TestingScreen(),
+      page: () => const TestingScreen(),
     ),
     GetPage(
       name: RouteName.stackScreen,
-      page: () => StackScreen(),
+      page: () => const StackScreen(),
     ),
   ];
 }
