@@ -18,7 +18,8 @@ class DioController extends GetxController {
         firstName: firstName,
         lastName: lastName,
       );
-      await userRository.postUser(request);
+      var postUser = await userRository.postUser(request);
+      user.value = postUser!;
       update();
       if (kDebugMode) {
         print('Success');

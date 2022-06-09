@@ -26,16 +26,9 @@ class UserService extends UserRository {
         'last_name': arguments.lastName,
         'email': arguments.email,
       });
+      return fromJson(response.data);
+      
 
-      if (response.statusCode == 201) {
-        return User(
-          id: int.tryParse(response.data['id'].toString()) ?? 0,
-          firstName: response.data['first_name'],
-          lastName: response.data['last_name'],
-          email: response.data['email'],
-        );
-      }
-      return null;
     } catch (e) {
       throw (Exception(e.toString()));
     }

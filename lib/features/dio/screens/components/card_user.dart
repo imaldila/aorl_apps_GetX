@@ -53,12 +53,11 @@ class UserCard extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                 SizedBox(
-                    width: 220,
-                    child: Text(': ${user!.firstName ?? '-'}' +
-                        (user!.lastName ?? '-')),
-                  ),
-              
+                SizedBox(
+                  width: 220,
+                  child: Text(': ${user!.firstName ?? '-'}' ' ' +
+                      (user!.lastName ?? '-')),
+                ),
               ],
             ),
             const SizedBox(
