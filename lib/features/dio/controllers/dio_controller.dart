@@ -7,10 +7,17 @@ class DioController extends GetxController {
   final UserRository userRository = UserService();
 
   var user = User().obs;
+  RxBool isFetching = false.obs;
+
+  final RxList<User> _listUser = <User>[].obs;
+  List<User> get listUser => _listUser;
+
+
 
   @override
   void onInit() {
     fetchUser();
+    // fetchAllUser();
     super.onInit();
   }
 
@@ -39,13 +46,34 @@ class DioController extends GetxController {
 
   void fetchUser() async {
     try {
+      isFetching.value = true;
       var getUser = await userRository.getUser();
       user.value = getUser!;
+      isFetching.value = false;
       update();
       if (kDebugMode) {
         print('Success');
       }
     } catch (e) {
+      isFetching.value = false;
+      if (kDebugMode) {
+        print('error getUser: $e');
+      }
+    }
+  }
+
+  void fetchAllUser() async {
+    try {
+      isFetching.value = true;
+      var getAllUser = await userRository.getUsers();
+      _listUser.add(getAllUser!);
+      isFetching.value = false;
+      update();
+      if (kDebugMode) {
+        print('Success');
+      }
+    } catch (e) {
+      isFetching.value = false;
       if (kDebugMode) {
         print('error getUser: $e');
       }

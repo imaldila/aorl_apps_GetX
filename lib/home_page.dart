@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Get.toNamed(RouteName.dioscreen);
               },
-              child: const Text('Go To Dio'),
+              child: const Text('Go To Dio Single Data'),
             ),
             ElevatedButton(
               onPressed: () {

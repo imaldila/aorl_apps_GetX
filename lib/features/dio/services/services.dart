@@ -15,6 +15,7 @@ class UserArguments {
 abstract class UserRository {
   Future<User?> postUser(UserArguments arguments);
   Future<User?> getUser();
+  Future<User?> getUsers();
 }
 
 class UserService extends UserRository {
@@ -32,10 +33,22 @@ class UserService extends UserRository {
     }
   }
 
+  //get Single User
   @override
   Future<User?> getUser() async {
     try {
       var response = await Dio().get('https://reqres.in/api/users/2');
+      return User.fromJson(response.data!['data']);
+    } catch (e) {
+      throw (Exception(e.toString()));
+    }
+  }
+
+  //get List User
+  @override
+  Future<User?> getUsers() async {
+    try {
+      var response = await Dio().get('https://reqres.in/api/users?page=2');
       return User.fromJson(response.data!['data']);
     } catch (e) {
       throw (Exception(e.toString()));

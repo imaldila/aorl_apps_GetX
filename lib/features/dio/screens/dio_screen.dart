@@ -21,7 +21,21 @@ class DioScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(() => UserCard(user: userC.user.value)),
+            Obx(() {
+              if (userC.isFetching.isTrue) {
+                return const Center(child: CircularProgressIndicator());
+              }
+
+              if (userC.isFetching.isFalse) {
+                return UserCard(
+                  user: userC.user.value,
+                );
+              } else {
+                return const Center(
+                  child: Text('Something went wrong.'),
+                );
+              }
+            }),
             const SizedBox(
               height: 16,
             ),
@@ -29,7 +43,8 @@ class DioScreen extends StatelessWidget {
               width: 100,
               child: ElevatedButton(
                 onPressed: () {
-                  userC.fetchUser();
+                  // userC.fetchAllUser();
+                  print(userC.listUser.length);
                 },
                 child: const Text('GET'),
               ),

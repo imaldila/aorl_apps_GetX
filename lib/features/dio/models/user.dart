@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 // User userFromJson(String str) => User.fromJson(json.decode(str));
 
 class User {
@@ -24,15 +22,6 @@ class User {
         lastName: json['last_name'],
         avatar: json['avatar'],
       );
-
-  // fromJson(Map<String, dynamic> json) {
-  //   return User(
-  //     id: json['id'],
-  //     email: json['email'],
-  //     firstName: json['first_name'],
-  //     lastName: json['last_name'],
-  //   );
-  // }
 }
 
 User fromJson(Map<String, dynamic> json) {
