@@ -1,7 +1,7 @@
 import 'package:aorl_apps_getx/bindings/binding.dart';
 import 'package:aorl_apps_getx/bindings/textfield_binding.dart';
 import 'package:aorl_apps_getx/features/counter/screens/counter_screen.dart';
-import 'package:aorl_apps_getx/features/dio/screens/dio_screen.dart';
+import 'package:aorl_apps_getx/features/dio_single/screens/dio_screen.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_one.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_three.dart';
 import 'package:aorl_apps_getx/features/passdata/screens/screen_two.dart';

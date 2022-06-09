@@ -63,8 +63,6 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go To Stack'),
             ),
-            // Text(Get.find<TextController>().textC.text),
-            // Text(Get.find<CounterController>().counter.value.toString())
           ],
         ),
       ),

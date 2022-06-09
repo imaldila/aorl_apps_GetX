@@ -1,5 +1,5 @@
-import 'package:aorl_apps_getx/features/dio/models/user.dart';
-import 'package:aorl_apps_getx/features/dio/services/services.dart';
+import 'package:aorl_apps_getx/features/dio_single/models/user.dart';
+import 'package:aorl_apps_getx/features/dio_single/services/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
