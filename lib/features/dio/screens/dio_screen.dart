@@ -28,7 +28,9 @@ class DioScreen extends StatelessWidget {
             SizedBox(
               width: 100,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  userC.fetchUser();
+                },
                 child: const Text('GET'),
               ),
             ),

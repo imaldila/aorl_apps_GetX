@@ -8,6 +8,12 @@ class DioController extends GetxController {
 
   var user = User().obs;
 
+  @override
+  void onInit() {
+    fetchUser();
+    super.onInit();
+  }
+
   void postUser(
       {required String email,
       required String firstName,
@@ -27,6 +33,21 @@ class DioController extends GetxController {
     } catch (e) {
       if (kDebugMode) {
         print('error postUser: $e');
+      }
+    }
+  }
+
+  void fetchUser() async {
+    try {
+      var getUser = await userRository.getUser();
+      user.value = getUser!;
+      update();
+      if (kDebugMode) {
+        print('Success');
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('error getUser: $e');
       }
     }
   }
