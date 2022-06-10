@@ -1,22 +1,24 @@
-import 'package:aorl_apps_getx/features/dio_single/controllers/dio_controller.dart';
+import 'package:aorl_apps_getx/features/dio_list/models/dio_list_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../models/user.dart';
+import '../../controllers/diolist_controller.dart';
 
 class UserCard extends StatelessWidget {
   UserCard({
     Key? key,
-    required this.user,
+    required this.users,
+    required this.index,
   }) : super(key: key);
 
-  final User? user;
-  final uC = Get.find<DioController>();
+  final List<UserData>? users;
+  final uC = Get.find<DioListController>();
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16 * 2),
+      padding: const EdgeInsets.symmetric(horizontal: 16 * 2, vertical: 8),
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -36,7 +38,7 @@ class UserCard extends StatelessWidget {
                 ),
                 Expanded(
                   // width: 220,
-                  child: Text(': ${user?.id ?? '-'}'),
+                  child: Text(': ${users![index].id ?? '-'}'),
                 )
               ],
             ),
@@ -55,8 +57,8 @@ class UserCard extends StatelessWidget {
                 ),
                 Expanded(
                   // width: 220,
-                  child: Text(': ${user!.firstName ?? '-'}' ' ' +
-                      (user!.lastName ?? '-')),
+                  child: Text(': ${users![index].firstName ?? '-'}' ' ' +
+                      (users![index].lastName ?? '-')),
                 ),
               ],
             ),
@@ -75,7 +77,7 @@ class UserCard extends StatelessWidget {
                 ),
                 Expanded(
                   // width: 220,
-                  child: Text(': ${user?.email ?? '-'}'),
+                  child: Text(': ${users![index].email ?? '-'}'),
                 )
               ],
             ),

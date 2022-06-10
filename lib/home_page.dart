@@ -25,12 +25,18 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go To Counter'),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => TextFieldScreen()));
               },
               child: const Text('Go To TextField'),
+            ),
+            const SizedBox(
+              height: 16,
             ),
             ElevatedButton(
               onPressed: () {
@@ -39,11 +45,17 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go To Workers GetX'),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             ElevatedButton(
               onPressed: () {
                 Get.toNamed(RouteName.passData);
               },
               child: const Text('Go To PassData'),
+            ),
+            const SizedBox(
+              height: 16,
             ),
             ElevatedButton(
               onPressed: () {
@@ -51,17 +63,26 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go To Dio Single Data'),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             ElevatedButton(
               onPressed: () {
                 Get.toNamed(RouteName.diolistScreen);
               },
               child: const Text('Go To Dio List Data'),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             ElevatedButton(
               onPressed: () {
                 Get.toNamed(RouteName.radioScreen);
               },
               child: const Text('Go To Radio'),
+            ),
+            const SizedBox(
+              height: 16,
             ),
             ElevatedButton(
               onPressed: () {
