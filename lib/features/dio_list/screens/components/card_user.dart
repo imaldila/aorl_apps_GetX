@@ -17,98 +17,95 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16 * 2, vertical: 8),
-      child: Row(
-        children: [
-          SizedBox(
-            height: 80,
-            width: 80,
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(
-                users![index].avatar!,
+    return Row(
+      children: [
+        SizedBox(
+          height: 80,
+          width: 80,
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(
+              users![index].avatar!,
+            ),
+          ),
+        ),
+        const SizedBox(
+          width: 16,
+        ),
+        Expanded(
+          flex: 1,
+          child: Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.lightBlueAccent),
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        width: 50,
+                        child: Text(
+                          'ID',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Expanded(
+                        // width: 220,
+                        child: Text(': ${users![index].id ?? '-'}'),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        width: 50,
+                        child: Text(
+                          'Name',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Expanded(
+                        // width: 220,
+                        child: Text(
+                            ': ${users![index].firstName ?? '-'}' ' ' +
+                                (users![index].lastName ?? '-')),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        width: 50,
+                        child: Text(
+                          'Email',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Expanded(
+                        // width: 220,
+                        child: Text(': ${users![index].email ?? '-'}'),
+                      )
+                    ],
+                  ),
+                ],
               ),
             ),
           ),
-          const SizedBox(
-            width: 16,
-          ),
-          Expanded(
-            flex: 1,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.lightBlueAccent),
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          width: 50,
-                          child: Text(
-                            'ID',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Expanded(
-                          // width: 220,
-                          child: Text(': ${users![index].id ?? '-'}'),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          width: 50,
-                          child: Text(
-                            'Name',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Expanded(
-                          // width: 220,
-                          child: Text(
-                              ': ${users![index].firstName ?? '-'}' ' ' +
-                                  (users![index].lastName ?? '-')),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          width: 50,
-                          child: Text(
-                            'Email',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Expanded(
-                          // width: 220,
-                          child: Text(': ${users![index].email ?? '-'}'),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
