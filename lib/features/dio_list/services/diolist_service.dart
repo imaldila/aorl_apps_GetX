@@ -1,5 +1,8 @@
 import 'package:aorl_apps_getx/features/dio_list/models/dio_list_model.dart';
+
 import 'package:dio/dio.dart';
+
+import '../../../network/network_dio.dart';
 
 class UserArguments {
   String firstName, lastName, email;
@@ -16,13 +19,14 @@ abstract class UsersRository {
 }
 
 class UsersService extends UsersRository {
+  Dio get _dio => NetworkDio.createDio();
   //get List User
   @override
   Future<Users> getUsers() async {
     try {
-      var response = await Dio().get('https://reqres.in/api/users?page=2');
-      return Users.fromJson(response.data);
-    } catch (e) {
+      var response = await _dio.get('/users?page=2');
+      return usersFromJson(response.data);
+    } on DioError catch (e) {
       throw (Exception(e.toString()));
     }
   }

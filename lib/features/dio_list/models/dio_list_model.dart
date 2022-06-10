@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+Users usersFromJson(String str) => Users.fromJson(json.decode(str));
+
 class Users {
   int? page;
   int? perPage;
@@ -52,7 +56,13 @@ class UserData {
   String? lastName;
   String? avatar;
 
-  UserData({this.id, this.email, this.firstName, this.lastName, this.avatar});
+  UserData({
+    this.id,
+    this.email,
+    this.firstName,
+    this.lastName,
+    this.avatar,
+  });
 
   UserData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
