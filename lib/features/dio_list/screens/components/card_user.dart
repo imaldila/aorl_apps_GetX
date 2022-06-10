@@ -36,6 +36,9 @@ class UserCard extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
               child: Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
